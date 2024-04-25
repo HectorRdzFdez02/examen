@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="shootgamecod.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        
+        <a-assets>
+            <img src="fondo.jpg" id="cielo">
+            <img src="enemigo.png" id="enemigo">
+            <img src="arma.png" id="arma">
+        </a-assets>
+
+        <a-sky src="#cielo"></a-sky>
+
+
+        
+
+        <a-entity class="square" position="-10 3 0" rotation="0 0 0" animation__1="property: position; to: 10 3 0; dir: alternative; loop: false; dur: 4000;  easing: linear"
+        position="10 3 0"
+        animation__2="property: position; to: 10 3 -10; dir: alternative; loop: false; dur: 4000;  easing: linear">
+         
+
+          <a-entity class="shootline" position="0 -5 -2"></a-entity>
+
+          <a-entity class="shootline" position="0 -7.5 0"></a-entity>
+
+          <a-entity class="shootline" position="0 -10 2"></a-entity>
+
+          <a-entity class="shootline" position="0 -12.5 1"></a-entity>
+
+          
+
+          <a-entity class="shootline" position="0 -5 2"></a-entity>
+
+          <a-entity class="shootline" position="0 -7.5 10"></a-entity>
+
+          <a-entity class="shootline" position="0 -10 6"></a-entity>
+
+          <a-entity class="shootline" position="0 -12.5 3"></a-entity>
+
+          
+
+          <a-entity class="shootline" position="0 -5 20"></a-entity>
+
+          <a-entity class="shootline" position="0 -7.5 30"></a-entity>
+
+          <a-entity class="shootline" position="0 -10 15"></a-entity>
+
+          <a-entity class="shootline" position="0 -12.5 23"></a-entity>
+
+        </a-entity>
+
+
+        <a-text value="0 ENEMIGOS ELIMINADOS"
+        color="white" position="0 -0.1 -1" width="1" align="center">
+        
+            
+    
+        </a-text>
+
+       <a-entity camera look-controls>
+        
+        
+        <a-entity cursor="fuse: true; fuseTimeout:100" position="0 0 -1" raycaster="object: .enemigos"
+                geometry="primitive: ring; radiusInner: 0.02; radiusInner:0.02; radiusOuter: 0.03" material="shader: flat">
+            </a-entity>
+
+        <a-image src="#arma" position="0.5 -1.2 -2" width="2.5" height="2"></a-image>
+
+       </a-entity>
+
+    </a-scene>
+  </body>
+</html>
